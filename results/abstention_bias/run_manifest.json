@@ -1,0 +1,82 @@
+{
+  "models": {
+    "baseline": {
+      "provider": "openai_compatible",
+      "model_name": "llama-3.3-70b-versatile",
+      "api_key": "***redacted***",
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "timeout_sec": 90,
+      "max_retries": 8,
+      "retry_base_sec": 2.5,
+      "min_interval_sec": 1.2
+    },
+    "assessor": {
+      "provider": "openai_compatible",
+      "model_name": "llama-3.3-70b-versatile",
+      "api_key": "***redacted***",
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "timeout_sec": 90,
+      "max_retries": 8,
+      "retry_base_sec": 2.5,
+      "min_interval_sec": 1.2
+    },
+    "responder": {
+      "provider": "openai_compatible",
+      "model_name": "llama-3.3-70b-versatile",
+      "api_key": "***redacted***",
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "timeout_sec": 90,
+      "max_retries": 8,
+      "retry_base_sec": 2.5,
+      "min_interval_sec": 1.2
+    },
+    "verifier": {
+      "provider": "openai_compatible",
+      "model_name": "llama-3.3-70b-versatile",
+      "api_key": "***redacted***",
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "timeout_sec": 90,
+      "max_retries": 8,
+      "retry_base_sec": 2.5,
+      "min_interval_sec": 1.2
+    },
+    "judge": {
+      "provider": "openai_compatible",
+      "model_name": "llama-3.3-70b-versatile",
+      "api_key": "***redacted***",
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "timeout_sec": 90,
+      "max_retries": 8,
+      "retry_base_sec": 2.5,
+      "min_interval_sec": 1.2
+    }
+  },
+  "hybrid": {
+    "scorer_uncertain_low": 0.35,
+    "scorer_uncertain_high": 0.75,
+    "llm_refuse_threshold": 0.7,
+    "llm_answer_threshold": 0.35,
+    "max_baseline_calls": 1000,
+    "max_assessor_calls": 350,
+    "max_verifier_calls": 250,
+    "max_judge_calls": 1000,
+    "enable_llm_baseline": true,
+    "enable_llm_assessor": true,
+    "enable_llm_responder": false,
+    "enable_llm_verifier": true,
+    "enable_llm_judge": true,
+    "stop_on_llm_error": true,
+    "resume_from_checkpoints": true,
+    "checkpoint_every_rows": 1,
+    "trace_llm_prompts": true,
+    "verify_paag_refusals": false,
+    "verify_paag_answers": true
+  },
+  "outputs": {
+    "benchmark_csv": "results\\abstention_bias\\benchmark.csv",
+    "baseline_results_csv": "results\\abstention_bias\\baseline_results.csv",
+    "paag_results_csv": "results\\abstention_bias\\paag_results.csv",
+    "judge_results_csv": "results\\abstention_bias\\judge_results.csv",
+    "llm_trace_jsonl": "results\\abstention_bias\\llm_traces.jsonl"
+  }
+}
